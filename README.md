@@ -20,7 +20,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 ## Usage
 
 ```ruby
-require "sinatra-jwt"
+require "sinatra/jwt"
 
 class Application < Sinatra::Base
   register Sinatra::Jwt
@@ -30,7 +30,7 @@ end
 ## Use a single key
 If you wish to use a single key you can provide it directly
 ```ruby
-require "sinatra-jwt"
+require "sinatra/jwt"
 
 class Application < Sinatra::Base
   register Sinatra::Jwt
@@ -95,7 +95,7 @@ The file can contain as many keys as you want all with different algorithms.
 #### Files
 You can change the file that is loaded by either hardcoding the path
 ```ruby
-require "sinatra-jwt"
+require "sinatra/jwt"
 
 class Application < Sinatra::Base
   register Sinatra::Jwt
@@ -105,7 +105,7 @@ end
 ```
 or using the env helper method that takes the path from the environment variables
 ```ruby
-require "sinatra-jwt"
+require "sinatra/jwt"
 
 class Application < Sinatra::Base
   register Sinatra::Jwt
@@ -119,7 +119,7 @@ end
 #### Strings
 You can change the file that is loaded by either hardcoding the path
 ```ruby
-require "sinatra-jwt"
+require "sinatra/jwt"
 
 class Application < Sinatra::Base
   register Sinatra::Jwt
@@ -129,7 +129,7 @@ end
 ```
 or using the env helper method that takes the path from the environment variables
 ```ruby
-require "sinatra-jwt"
+require "sinatra/jwt"
 
 class Application < Sinatra::Base
   register Sinatra::Jwt
@@ -190,7 +190,7 @@ You can use a custom decoder by implementing an object that has a `decode` metho
 ```ruby
 require "base64"
 require "json"
-require "sinatra-jwt"
+require "sinatra/jwt"
 
 class DummyDecoder
   def self.decode(token, key = nil, verify = false, options = {})
@@ -215,7 +215,7 @@ end
 This decoder is bundled with the extension but will cause `unauthorized calls in any other environment than development`
 
 ```ruby
-require "sinatra-jwt"
+require "sinatra/jwt"
 
 class Application < Sinatra::Base
   register Sinatra::Jwt

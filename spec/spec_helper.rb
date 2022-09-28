@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
-require "sinatra/jwt"
 require "rack/test"
+
+require 'simplecov'
+SimpleCov.start do
+  SimpleCov.minimum_coverage 90
+end
+
+require "sinatra/jwt"
 
 RSpec.configure do |config|
   # config.include Rack::Test::Methods

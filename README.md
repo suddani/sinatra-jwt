@@ -1,3 +1,6 @@
+[![GitHub version](https://badge.fury.io/gh/suddani%2Fsinatra-jwt.svg)](https://badge.fury.io/gh/suddani%2Fsinatra-jwt)
+[![Gem Version](https://badge.fury.io/rb/sinatra-jwt.svg)](https://badge.fury.io/rb/sinatra-jwt)
+
 # Sinatra::Jwt
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sinatra/jwt`. To experiment with that code, run `bin/console` for an interactive prompt.

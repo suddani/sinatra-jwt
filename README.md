@@ -1,5 +1,6 @@
 [![GitHub version](https://badge.fury.io/gh/suddani%2Fsinatra-jwt.svg)](https://badge.fury.io/gh/suddani%2Fsinatra-jwt)
 [![Gem Version](https://badge.fury.io/rb/sinatra-jwt.svg)](https://badge.fury.io/rb/sinatra-jwt)
+[![Ruby](https://github.com/suddani/sinatra-jwt/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/suddani/sinatra-jwt/actions/workflows/main.yml)
 
 # Sinatra::Jwt
 

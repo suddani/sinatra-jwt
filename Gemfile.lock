@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sinatra-jwt (0.1.0)
+    sinatra-jwt (0.2.0)
       jwt (~> 2.5)
       sinatra (~> 2.2)
 

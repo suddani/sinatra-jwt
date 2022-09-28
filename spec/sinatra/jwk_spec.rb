@@ -31,8 +31,14 @@ RSpec.describe Sinatra::Jwt::JwkLoader do
     expect(last_response.status).to eq 200
   end
 
-  it "returns empty response" do
+  it "skip auth" do
     get "/noauth"
+    expect(last_response.body).to eq("loggedIn")
+    expect(last_response.status).to eq 200
+  end
+
+  it "skip auth rule" do
+    get "/noauth/rule"
     expect(last_response.body).to eq("loggedIn")
     expect(last_response.status).to eq 200
   end

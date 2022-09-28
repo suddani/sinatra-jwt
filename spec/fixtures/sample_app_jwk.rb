@@ -10,6 +10,10 @@ class SampleAppJwk < Sinatra::Base
     "Hello World"
   end
 
+  get "/noauth/rule", auth: [{ auth: false }] do
+    "loggedIn"
+  end
+
   get "/noauth", auth: false do
     "loggedIn"
   end

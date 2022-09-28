@@ -71,6 +71,8 @@ module Sinatra
           return true if options_data == false
 
           options = options_data.is_a?(Hash) ? options_data : {}
+          return true if options[:auth] == false
+
           should_stop = !options.key?(:next) || !options[:next]
           decoded_key = if should_stop
                           authorize!

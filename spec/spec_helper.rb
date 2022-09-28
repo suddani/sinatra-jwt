@@ -2,7 +2,7 @@
 
 require "rack/test"
 
-require 'simplecov'
+require "simplecov"
 SimpleCov.start do
   SimpleCov.minimum_coverage 90
 end

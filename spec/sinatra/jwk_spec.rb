@@ -31,6 +31,12 @@ RSpec.describe Sinatra::Jwt::JwkLoader do
     expect(last_response.status).to eq 200
   end
 
+  it "returns empty response" do
+    get "/noauth"
+    expect(last_response.body).to eq("loggedIn")
+    expect(last_response.status).to eq 200
+  end
+
   it "jwt missing" do
     get "/protected"
     expect(last_response.body).to eq unauthorized "Missing JWT"

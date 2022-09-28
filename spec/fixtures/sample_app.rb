@@ -10,6 +10,10 @@ class SampleApp < Sinatra::Base
     "Hello World"
   end
 
+  get "/noauth", auth: false do
+    "loggedIn"
+  end
+
   get "/protected", auth: true do
     "loggedIn"
   end

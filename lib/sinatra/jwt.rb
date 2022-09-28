@@ -68,6 +68,8 @@ module Sinatra
 
       app.set(:auth) do |options_data|
         condition do
+          return true if options_data == false
+
           options = options_data.is_a?(Hash) ? options_data : {}
           should_stop = !options.key?(:next) || !options[:next]
           decoded_key = if should_stop
@@ -75,20 +77,19 @@ module Sinatra
                         else
                           authorize
                         end
-          if decoded_key
-            if options.key?(:contains)
-              added_keys = settings.jwt_auth_auth_diff.added_attr_or_appended?(
-                decoded_key.first,
-                JSON.parse(options[:contains].to_json)
-              )
-              if should_stop && added_keys
-                halt 401, { status: "Unauthorized", message: "Missing rights" }.to_json
-              elsif added_keys
-                false
-              end
+
+          return false unless decoded_key
+
+          if options.key?(:contains)
+            added_keys = settings.jwt_auth_auth_diff.added_attr_or_appended?(
+              decoded_key.first,
+              JSON.parse(options[:contains].to_json)
+            )
+            if should_stop && added_keys
+              halt 401, { status: "Unauthorized", message: "Missing rights" }.to_json if should_stop && added_keys
+            elsif added_keys
+              return false
             end
-          else
-            false
           end
         end
       end

@@ -51,16 +51,6 @@ module Sinatra
       set :jwt_auth_decoder, decoder
     end
 
-    def self.added_attr_or_appended?(diff)
-      return true unless diff[:added_attr].nil?
-      return true unless diff[:appended].nil?
-
-      diff.each do |_k, v|
-        return true if v.is_a?(Hash) && added_attr_or_appended?(v)
-      end
-      false
-    end
-
     # rubocop:disable Metrics/AbcSize
     # rubocop:disable Metrics/CyclomaticComplexity
     # rubocop:disable Metrics/MethodLength

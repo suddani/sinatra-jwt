@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+while inotifywait -e close_write * -e close_write **/* -e close_write **/**/* -e close_write **/**/**/*
+  do
+    bundle exec rspec $1
+done

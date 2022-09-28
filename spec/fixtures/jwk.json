@@ -1,0 +1,9 @@
+{
+  "keys": [
+    {
+      "kid": "lol",
+      "k": "superSecretKeyJWK",
+      "kty": "oct"
+    }
+  ]
+}
